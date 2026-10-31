@@ -1,4 +1,3 @@
-import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import './css/footer.css';
 import logo from './assets/AR-logo-transparent.png';

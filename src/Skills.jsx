@@ -1,4 +1,3 @@
-import React from 'react';
 import './css/skills.css';
 import htmlIcon from './assets/html.png';
 import cssIcon from './assets/css.png';

@@ -1,4 +1,3 @@
-import React from 'react';
 import './css/achivements.css';
 import award2024Img from './assets/2024.png';
 import award2025Img from './assets/2025.png';
@@ -49,7 +48,7 @@ function AchiveMents() {
                                 )}
                             </div>
 
-                            {/* PNG Image - replace src/assets/rising-star.png & late-night-hero.png with original photos */}
+                            {/* Award photo */}
                             <img
                                 src={item.image}
                                 alt={item.title}

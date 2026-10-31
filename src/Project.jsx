@@ -1,9 +1,7 @@
-import React from 'react';
 import './css/project.css';
 import bookTravelLogo from './assets/project-booktravel.png';
 import bookitngoLogo from './assets/project-bookitngo.png';
 import blueskyportLogo from './assets/project-blueskyport.png';
-import bttravelsLogo from './assets/project-bttravels.png';
 import danatLogo from './assets/project-danat.png';
 import magicfaresLogo from './assets/project-magicfares.png';
 
@@ -11,7 +9,6 @@ const projects = [
     { name: 'Book Travel', logo: bookTravelLogo },
     { name: 'Bookit N Go', logo: bookitngoLogo },
     { name: 'BlueSkyPort', logo: blueskyportLogo },
-    // { name: 'BT Travels', logo: bttravelsLogo },
     { name: 'Danat', logo: danatLogo },
     { name: 'Magic Fares', logo: magicfaresLogo },
 ];
