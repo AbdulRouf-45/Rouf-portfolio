@@ -40,6 +40,7 @@ export default defineConfig(({ mode }) => {
       'import.meta.env.VITE_EMAIL': JSON.stringify(merged.VITE_EMAIL || 'abdulroufshaik16@gmail.com'),
       'import.meta.env.VITE_LOCATION': JSON.stringify(merged.VITE_LOCATION || 'Vijayawada, India'),
       'import.meta.env.VITE_PHONE': JSON.stringify(merged.VITE_PHONE || '9346222492'),
+      'import.meta.env.VITE_API_URL': JSON.stringify(merged.VITE_API_URL || 'http://localhost:5000'),
     },
   }
 })

@@ -14,18 +14,50 @@ function Contact() {
         message: ''
     });
 
-    const [submitted, setSubmitted] = useState(false);
+    // States: 'idle' | 'sending' | 'success' | 'error'
+    const [status, setStatus] = useState('idle');
+    const [statusMessage, setStatusMessage] = useState('');
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Construct mailto link
-        const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(formData.subject || 'Frontend Role Inquiry')}&body=${encodeURIComponent(`Hi Rouf,\n\n${formData.message}\n\nFrom: ${formData.name} (${formData.email})`)}`;
-        window.location.href = mailtoUrl;
-        setSubmitted(true);
+        setStatus('sending');
+        setStatusMessage('');
+
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+        try {
+            const res = await fetch(`${apiUrl}/api/contact`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json().catch(() => null);
+
+            if (res.ok && data?.ok) {
+                setStatus('success');
+                setStatusMessage('Thank you! Your message has been sent successfully. I will get back to you soon.');
+                setFormData({
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                setStatus('error');
+                setStatusMessage(data?.error || 'Failed to send message. Please try again or email me directly.');
+            }
+        } catch (err) {
+            console.error('Contact form submission error:', err);
+            setStatus('error');
+            setStatusMessage('Unable to reach the server. Please check your connection or email me directly.');
+        }
     };
 
     return (
@@ -155,13 +187,23 @@ function Contact() {
                                 ></textarea>
                             </div>
 
-                            <button type="submit" className="contact-submit-btn">
-                                Send message &rsaquo;
+                            <button
+                                type="submit"
+                                className="contact-submit-btn"
+                                disabled={status === 'sending'}
+                            >
+                                {status === 'sending' ? 'Sending message...' : 'Send message ›'}
                             </button>
 
-                            {submitted && (
+                            {status === 'success' && (
                                 <div className="contact-success-msg">
-                                    Thank you! Your email client has been opened. Looking forward to connecting!
+                                    {statusMessage}
+                                </div>
+                            )}
+
+                            {status === 'error' && (
+                                <div className="contact-error-msg">
+                                    {statusMessage}
                                 </div>
                             )}
                         </form>
