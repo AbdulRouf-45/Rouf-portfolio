@@ -186,6 +186,12 @@
         padding: 36px 0;
     }
 
+    .project-description {
+        font-size: 15px;
+        margin-top: -12px;
+        margin-bottom: 22px;
+    }
+
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 14px;
@@ -354,6 +360,12 @@
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+    }
+
+    .project-description {
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 20px;
     }
 
     .project-card {

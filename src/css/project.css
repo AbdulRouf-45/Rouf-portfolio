@@ -3,6 +3,16 @@
     font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
 }
 
+.project-description {
+    color: #a1a1aa;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: -16px;
+    margin-bottom: 28px;
+    max-width: 650px;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

@@ -19,7 +19,10 @@ const projects = [
 function Project() {
     return (
         <div id="projects" className="project-section">
-            <h3 className="section-title">Projects</h3>
+            <h3 className="section-title">Real-Time Projects</h3>
+            <p className="project-description">
+                Live web applications I’ve built and contributed to as a frontend developer.
+            </p>
             <div className="projects-grid">
                 {projects.map((project, index) => (
                     <div key={index} className="project-card" title={project.name}>
