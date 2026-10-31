@@ -1,8 +1,8 @@
 .home-section {
     /* background-color: #141414; */
     border-radius: 16px;
-    padding: 4rem 0rem;
-    margin-top: 1.5rem;
+    padding: 64px 0px;
+    margin-top: 24px;
     color: white;
     font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
 }
@@ -14,9 +14,9 @@
 }
 
 .home-title {
-    font-size: 3.2rem;
+    font-size: 51px;
     font-weight: 800;
-    margin-bottom: 1.25rem;
+    margin-bottom: 20px;
     color: #ffffff;
     line-height: 1.15;
     letter-spacing: -1px;
@@ -25,9 +25,9 @@
 
 .home-description {
     color: #a1a1aa;
-    font-size: 1.05rem;
+    font-size: 17px;
     line-height: 1.75;
-    margin-bottom: 2.25rem;
+    margin-bottom: 36px;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
@@ -56,7 +56,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .home-section {
-        padding: 2.5rem 1.5rem;
+        padding: 40px 24px;
         text-align: center;
     }
 
@@ -65,11 +65,11 @@
     }
 
     .home-title {
-        font-size: 2.2rem;
+        font-size: 35px;
     }
 
     .home-description {
-        font-size: 0.95rem;
+        font-size: 15px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -77,6 +77,6 @@
     .home-avatar-img {
         width: 220px;
         height: 220px;
-        margin-top: 2rem;
+        margin-top: 32px;
     }
 }

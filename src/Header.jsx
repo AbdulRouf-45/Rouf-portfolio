@@ -95,7 +95,9 @@ function Header() {
             />
             <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`} aria-label="Mobile Navigation">
                 <div className="mobile-nav-header">
-                    <span className="mobile-nav-title">Navigation</span>
+                    <a href="#home" className="mobile-nav-logo-link" onClick={closeMenu}>
+                        <img src={AbdulRouf} alt="Abdul Rouf" className="mobile-nav-logo" />
+                    </a>
                     <button
                         type="button"
                         className="mobile-nav-close"

@@ -1,9 +1,9 @@
 .header-section {
     background-color: #1a1a1a;
     color: white;
-    padding: 1rem;
+    padding: 16px;
     border-radius: 12px;
-    margin-top: 0.75rem;
+    margin-top: 12px;
     position: relative;
     z-index: 1000;
     font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
@@ -41,7 +41,7 @@
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 32px;
     margin: 0;
     padding: 0;
 }
@@ -49,7 +49,7 @@
 .header-links a {
     text-decoration: none;
     color: #e4e4e7;
-    font-size: 0.95rem;
+    font-size: 15px;
     font-weight: 500;
     transition: color 0.2s ease;
     cursor: pointer;
@@ -135,7 +135,7 @@
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
     z-index: 1200;
-    padding: 1.5rem;
+    padding: 24px;
     flex-direction: column;
     transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -148,16 +148,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.mobile-nav-title {
-    color: #4CAF50;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+.mobile-nav-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.mobile-nav-logo {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.mobile-nav-logo:hover {
+    transform: scale(1.06);
 }
 
 .mobile-nav-close {
@@ -170,7 +180,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 16px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -187,18 +197,18 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .mobile-nav-links li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.9rem 1rem;
+    padding: 14px 16px;
     border-radius: 8px;
     color: #f4f4f5;
     text-decoration: none;
-    font-size: 1.05rem;
+    font-size: 17px;
     font-weight: 500;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid transparent;
