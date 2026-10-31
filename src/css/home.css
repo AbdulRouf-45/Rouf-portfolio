@@ -1,0 +1,82 @@
+.home-section {
+    /* background-color: #141414; */
+    border-radius: 16px;
+    padding: 4rem 0rem;
+    margin-top: 1.5rem;
+    color: white;
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.home-description {
+    color: #a1a1aa;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 2.25rem;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+
+.home-avatar-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.home-avatar-img {
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #24332c;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-avatar-img:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-section {
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+    }
+
+    .home-content {
+        align-items: center;
+    }
+
+    .home-title {
+        font-size: 2.2rem;
+    }
+
+    .home-description {
+        font-size: 0.95rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-avatar-img {
+        width: 220px;
+        height: 220px;
+        margin-top: 2rem;
+    }
+}

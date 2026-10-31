@@ -1,0 +1,146 @@
+.achivement-section {
+    padding: 3rem 0;
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    background-color: #0b0d0e;
+    border: 1px solid #1a2027;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease-in-out, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(74, 222, 128, 0.4);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6), 0 0 18px rgba(74, 222, 128, 0.12);
+}
+
+.achievement-visual {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: #07090b;
+    background-image: 
+        radial-gradient(circle at center, rgba(34, 197, 94, 0.12) 0%, transparent 70%),
+        linear-gradient(to right, rgba(74, 222, 128, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(74, 222, 128, 0.08) 1px, transparent 1px);
+    background-size: 100% 100%, 28px 28px, 28px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid #171c23;
+}
+
+.achievement-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .achievement-img {
+    transform: scale(1.02);
+}
+
+.achievement-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 3px 9px;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.35);
+    border-radius: 4px;
+    color: #4ade80;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+}
+
+/* Star & Moon UX corner badge over the example image */
+.achievement-corner-ux {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(8, 11, 14, 0.85);
+    border: 1px solid rgba(74, 222, 128, 0.45);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 16px rgba(74, 222, 128, 0.25);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.achievement-card:hover .achievement-corner-ux {
+    transform: scale(1.08);
+    border-color: #4ade80;
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+.achievement-corner-icon {
+    width: 24px;
+    height: 24px;
+    color: #4ade80;
+    filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.9));
+}
+
+.achievement-content {
+    padding: 1.25rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.achievement-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+.achievement-desc {
+    color: #9ca3af;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.achievement-year {
+    color: #64748b;
+    font-size: 0.82rem;
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .achievement-visual {
+        height: 220px;
+    }
+}

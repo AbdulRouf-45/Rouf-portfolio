@@ -1,0 +1,63 @@
+.project-section {
+    padding: 3rem 0;
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+}
+
+.project-card {
+    background-color: #f4f6f9;
+    border-radius: 16px;
+    padding: 1.25rem 1rem;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, background-color 0.25s ease;
+}
+
+.project-card:hover {
+    /* background-color: #ffffff; */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.project-logo {
+    max-width: 85%;
+    max-height: 45px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.project-card:hover .project-logo {
+    transform: scale(1.06);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.85rem;
+    }
+
+    .project-card {
+        min-height: 85px;
+        padding: 0.9rem 0.75rem;
+    }
+
+    .project-logo {
+        max-height: 38px;
+    }
+}

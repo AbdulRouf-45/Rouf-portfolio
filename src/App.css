@@ -1,0 +1,41 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  color: #e4e4e7;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #38a139;
+  color: #ffffff;
+}
+
+/* Clear, Prominent Section Headings */
+.section-title {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+  letter-spacing: -0.5px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50%;
+  height: 3.5px;
+  background: linear-gradient(90deg, #38a139, #22c55e);
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(56, 161, 57, 0.5);
+}
