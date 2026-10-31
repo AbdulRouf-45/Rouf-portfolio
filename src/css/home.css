@@ -1,10 +1,10 @@
 .home-section {
-    /* background-color: #141414; */
     border-radius: 16px;
-    padding: 64px 0px;
-    margin-top: 24px;
+    padding: 64px 0px 48px 0px;
+    margin-top: 16px;
     color: white;
     font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    position: relative;
 }
 
 .home-content {
@@ -13,6 +13,9 @@
     justify-content: center;
 }
 
+/* ==========================================================================
+   HEADLINE & GRADIENT TEXT SHIMMER
+   ========================================================================== */
 .home-title {
     font-size: 51px;
     font-weight: 800;
@@ -23,40 +26,199 @@
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
+.home-name-gradient {
+    background: linear-gradient(135deg, #ffffff 10%, #4ade80 45%, #22c55e 80%, #86efac 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: nameGradientShimmer 8s ease-in-out infinite alternate;
+    display: inline-block;
+}
+
+@keyframes nameGradientShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
 .home-description {
     color: #a1a1aa;
     font-size: 17px;
     line-height: 1.75;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    max-width: 660px;
 }
 
+/* ==========================================================================
+   HERO ACTION BUTTONS
+   ========================================================================== */
+.home-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.home-btn-primary {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #ffffff;
+    padding: 13px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-btn-primary:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(34, 197, 94, 0.65), 0 0 15px rgba(74, 222, 128, 0.4);
+}
+
+.home-btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.home-btn-arrow {
+    transition: transform 0.25s ease;
+}
+
+.home-btn-primary:hover .home-btn-arrow {
+    transform: translateX(4px);
+}
+
+.home-btn-secondary {
+    background: rgba(255, 255, 255, 0.04);
+    color: #f4f4f5;
+    padding: 13px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+}
+
+.home-btn-secondary:hover {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+    border-color: rgba(74, 222, 128, 0.4);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   AVATAR WITH LEVITATION & PULSING NEON HALO
+   ========================================================================== */
+.home-avatar-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 360px;
+    animation: avatarFloat 8s ease-in-out infinite;
+}
+
+@keyframes avatarFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Ambient glow halo behind avatar - Slow & breathing */
+.home-avatar-halo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.35) 0%, rgba(34, 197, 94, 0.1) 50%, transparent 70%);
+    filter: blur(28px);
+    pointer-events: none;
+    animation: haloPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes haloPulse {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.92);
+    }
+    100% {
+        opacity: 0.85;
+        transform: translate(-50%, -50%) scale(1.06);
+    }
+}
+
+/* Subtle rotating dashed orbital ring around avatar - Slow rotation */
+.home-avatar-halo-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 345px;
+    height: 345px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(74, 222, 128, 0.28);
+    pointer-events: none;
+    animation: ringOrbit 35s linear infinite;
+}
+
+@keyframes ringOrbit {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
 
 .home-avatar-wrapper {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .home-avatar-img {
-    width: 330px;
-    height: 330px;
+    width: 310px;
+    height: 310px;
     border-radius: 50%;
     object-fit: cover;
-    background-color: #24332c;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #1a2720;
+    border: 3px solid rgba(74, 222, 128, 0.35);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(34, 197, 94, 0.3);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease, border-color 0.5s ease;
 }
 
-.home-avatar-img:hover {
-    transform: scale(1.02);
+.home-avatar-container:hover .home-avatar-img {
+    transform: scale(1.04);
+    border-color: rgba(74, 222, 128, 0.7);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(34, 197, 94, 0.5);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .home-section {
-        padding: 40px 24px;
+        padding: 40px 16px;
         text-align: center;
     }
 
@@ -74,9 +236,24 @@
         margin-right: auto;
     }
 
+    .home-cta-group {
+        justify-content: center;
+    }
+
+    .home-avatar-container {
+        width: 250px;
+        height: 250px;
+        margin-top: 32px;
+    }
+
+    .home-avatar-halo,
+    .home-avatar-halo-ring {
+        width: 245px;
+        height: 245px;
+    }
+
     .home-avatar-img {
         width: 220px;
         height: 220px;
-        margin-top: 32px;
     }
 }

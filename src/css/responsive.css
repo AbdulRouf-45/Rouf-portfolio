@@ -128,10 +128,6 @@
         display: flex !important;
     }
 
-    .mobile-nav {
-        display: flex !important;
-    }
-
     /* Section Title */
     .section-title {
         font-size: 27px;
@@ -162,13 +158,37 @@
         padding: 0 8px;
     }
 
+    .home-cta-group {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .home-avatar-container {
+        width: 240px;
+        height: 240px;
+        margin: 28px auto 0 auto;
+    }
+
+    .home-avatar-halo,
+    .home-avatar-halo-ring {
+        width: 230px;
+        height: 230px;
+    }
+
     .home-avatar-wrapper {
-        margin-top: 24px;
+        margin-top: 0;
     }
 
     .home-avatar-img {
-        width: 210px;
-        height: 210px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .back-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
     }
 
     /* Skills Grid */
@@ -240,8 +260,8 @@
     .footer-section {
         margin-top: 56px;
         margin-bottom: 24px;
-        padding: 40px 20px 24px 20px;
-        border-radius: 14px;
+        padding: 40px 0px 24px 0px;
+        border-radius: 0;
         text-align: center;
     }
 
@@ -331,9 +351,29 @@
         line-height: 1.6;
     }
 
+    .home-avatar-container {
+        width: 195px;
+        height: 195px;
+        margin: 20px auto 0 auto;
+    }
+
+    .home-avatar-halo,
+    .home-avatar-halo-ring {
+        width: 190px;
+        height: 190px;
+    }
+
     .home-avatar-img {
-        width: 180px;
-        height: 180px;
+        width: 165px;
+        height: 165px;
+    }
+
+    .home-btn-primary,
+    .home-btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: 14px;
     }
 
     /* Skills */

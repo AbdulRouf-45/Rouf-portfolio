@@ -19,13 +19,21 @@ function Skills() {
             <h3 className="section-title">Tech stack</h3>
             <div className="skills-grid">
                 {skills.map((skill, index) => (
-                    <div key={index} className="skill-card">
-                        <span className="skill-name">{skill.name}</span>
+                    <div
+                        key={index}
+                        className={`skill-card reveal-card card-wave-${index + 1}`}
+                        title={`${skill.name} Expertise`}
+                    >
+                        <div className="skill-info">
+                            <span className="skill-dot" aria-hidden="true"></span>
+                            <span className="skill-name">{skill.name}</span>
+                        </div>
                         <div className="skill-icon-wrapper">
                             <img
                                 src={skill.icon}
                                 alt={`${skill.name} Logo`}
                                 className="skill-icon"
+                                loading="lazy"
                             />
                         </div>
                     </div>

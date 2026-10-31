@@ -17,13 +17,28 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-    transition: transform 0.25s ease-in-out, border-color 0.25s ease, box-shadow 0.25s ease;
+    transition: border-color 0.45s ease, box-shadow 0.5s ease;
 }
 
+/* Remove up-animation on hover - card stays steady in place */
 .achievement-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(74, 222, 128, 0.4);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6), 0 0 18px rgba(74, 222, 128, 0.12);
+    transform: none;
+    border-color: rgba(74, 222, 128, 0.6);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 24px rgba(74, 222, 128, 0.25);
+}
+
+/* Slow, elegant white shine effect for achievement cards */
+.achievement-card.sheen-card::before {
+    transition: left 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Keep card steady without upward translation on scroll reveal */
+.achievement-card.reveal {
+    transform: none !important;
+}
+
+.achievement-card.reveal.is-revealed {
+    transform: none !important;
 }
 
 .achievement-visual {
@@ -32,7 +47,7 @@
     height: 280px;
     background-color: #07090b;
     background-image: 
-        radial-gradient(circle at center, rgba(34, 197, 94, 0.12) 0%, transparent 70%),
+        radial-gradient(circle at center, rgba(34, 197, 94, 0.16) 0%, transparent 70%),
         linear-gradient(to right, rgba(74, 222, 128, 0.08) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(74, 222, 128, 0.08) 1px, transparent 1px);
     background-size: 100% 100%, 28px 28px, 28px 28px;
@@ -41,6 +56,16 @@
     justify-content: center;
     overflow: hidden;
     border-bottom: 1px solid #171c23;
+    animation: gridBreathe 14s ease-in-out infinite alternate;
+}
+
+@keyframes gridBreathe {
+    0% {
+        background-position: center, 0 0, 0 0;
+    }
+    100% {
+        background-position: center, 14px 14px, 14px 14px;
+    }
 }
 
 .achievement-img {
@@ -48,28 +73,29 @@
     height: 100%;
     object-fit: contain;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .achievement-card:hover .achievement-img {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 .achievement-badge {
     position: absolute;
     top: 14px;
     left: 14px;
-    padding: 3px 9px;
-    background: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(74, 222, 128, 0.35);
-    border-radius: 4px;
+    padding: 4px 10px;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(74, 222, 128, 0.4);
+    border-radius: 6px;
     color: #4ade80;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     z-index: 2;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.25);
 }
 
 /* Star & Moon UX corner badge over the example image */
@@ -80,7 +106,7 @@
     width: 44px;
     height: 44px;
     border-radius: 10px;
-    background: rgba(8, 11, 14, 0.85);
+    background: rgba(8, 11, 14, 0.88);
     border: 1px solid rgba(74, 222, 128, 0.45);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 16px rgba(74, 222, 128, 0.25);
     backdrop-filter: blur(8px);
@@ -88,13 +114,13 @@
     align-items: center;
     justify-content: center;
     z-index: 2;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .achievement-card:hover .achievement-corner-ux {
-    transform: scale(1.08);
+    transform: scale(1.12);
     border-color: #4ade80;
-    box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+    box-shadow: 0 0 24px rgba(74, 222, 128, 0.65);
 }
 
 .achievement-corner-icon {
@@ -102,6 +128,36 @@
     height: 24px;
     color: #4ade80;
     filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.9));
+}
+
+.star-twinkle {
+    animation: starTwinkle 5s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.8));
+    }
+    50% {
+        transform: scale(1.16) rotate(14deg);
+        filter: drop-shadow(0 0 16px rgba(134, 239, 172, 1));
+    }
+}
+
+.moon-glow {
+    animation: moonBreathe 6s ease-in-out infinite;
+}
+
+@keyframes moonBreathe {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.8));
+    }
+    50% {
+        transform: translateY(-2px) scale(1.14);
+        filter: drop-shadow(0 0 16px rgba(74, 222, 128, 1));
+    }
 }
 
 .achievement-content {

@@ -17,12 +17,16 @@ function Project() {
     return (
         <div id="projects" className="project-section">
             <h3 className="section-title">Real-Time Projects</h3>
-            <p className="project-description">
+            <p className="project-description reveal delay-1">
                 Live web applications I’ve built and contributed to as a frontend developer.
             </p>
             <div className="projects-grid">
                 {projects.map((project, index) => (
-                    <div key={index} className="project-card" title={project.name}>
+                    <div
+                        key={index}
+                        className={`project-card reveal-card card-wave-${index + 1}`}
+                        title={project.name}
+                    >
                         <img
                             src={project.logo}
                             alt={`${project.name} Logo`}

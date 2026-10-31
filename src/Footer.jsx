@@ -8,7 +8,7 @@ function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="footer-section">
+        <footer className="footer-section reveal delay-1">
             <Row>
                 {/* Column 1: Brand & Tagline */}
                 <Col lg={5} md={6} className="mb-4 mb-lg-0">

@@ -29,11 +29,10 @@
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, background-color 0.25s ease;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, background-color 0.28s ease, opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-card:hover {
-    /* background-color: #ffffff; */
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.15);
 }

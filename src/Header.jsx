@@ -56,44 +56,50 @@ function Header() {
     ];
 
     return (
-        <header className="header-section">
-            <div className="header-container">
-                <a href="#home" className="header-logo-link" onClick={closeMenu}>
-                    <img src={AbdulRouf} alt="Abdul Rouf" className="header-logo" />
-                </a>
+        <>
+            <header className="header-section">
+                <div className="header-container">
+                    <a href="#home" className="header-logo-link" onClick={closeMenu}>
+                        <img src={AbdulRouf} alt="Abdul Rouf" className="header-logo" />
+                    </a>
 
-                {/* Desktop Navigation Links */}
-                <nav className="desktop-nav">
-                    <ul className="header-links">
-                        {navLinks.map((link) => (
-                            <li key={link.href}>
-                                <a href={link.href}>{link.label}</a>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
+                    {/* Desktop Navigation Links */}
+                    <nav className="desktop-nav">
+                        <ul className="header-links">
+                            {navLinks.map((link) => (
+                                <li key={link.href}>
+                                    <a href={link.href}>{link.label}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
 
-                {/* Mobile Hamburger Toggle */}
-                <button
-                    type="button"
-                    className={`hamburger-btn ${isMenuOpen ? 'open' : ''}`}
-                    onClick={toggleMenu}
-                    aria-label="Toggle navigation menu"
-                    aria-expanded={isMenuOpen}
-                >
-                    <span className="hamburger-line"></span>
-                    <span className="hamburger-line"></span>
-                    <span className="hamburger-line"></span>
-                </button>
-            </div>
+                    {/* Mobile Hamburger Toggle */}
+                    <button
+                        type="button"
+                        className={`hamburger-btn ${isMenuOpen ? 'open' : ''}`}
+                        onClick={toggleMenu}
+                        aria-label="Toggle navigation menu"
+                        aria-expanded={isMenuOpen}
+                    >
+                        <span className="hamburger-line"></span>
+                        <span className="hamburger-line"></span>
+                        <span className="hamburger-line"></span>
+                    </button>
+                </div>
+            </header>
 
-            {/* Mobile Navigation Drawer & Backdrop */}
+            {/* Mobile Navigation Drawer & Backdrop (Rendered outside header-section to prevent containing block trapping) */}
             <div
                 className={`mobile-nav-backdrop ${isMenuOpen ? 'active' : ''}`}
                 onClick={closeMenu}
                 aria-hidden="true"
             />
-            <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`} aria-label="Mobile Navigation">
+            <nav
+                className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}
+                aria-label="Mobile Navigation"
+                aria-hidden={!isMenuOpen}
+            >
                 <div className="mobile-nav-header">
                     <a href="#home" className="mobile-nav-logo-link" onClick={closeMenu}>
                         <img src={AbdulRouf} alt="Abdul Rouf" className="mobile-nav-logo" />
@@ -118,7 +124,7 @@ function Header() {
                     ))}
                 </ul>
             </nav>
-        </header>
+        </>
     );
 }
 
