@@ -9,6 +9,8 @@ import Project from './Project';
 import Contact from './Contact';
 import Footer from './Footer';
 import AchiveMents from './AchiveMents';
+import './css/responsive.css';
+
 
 function App() {
   return (

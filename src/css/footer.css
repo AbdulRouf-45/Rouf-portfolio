@@ -1,9 +1,14 @@
 .footer-section {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #14161d;
+    background: linear-gradient(180deg, #181b24 0%, #111318 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
     margin-top: 5rem;
-    padding: 4rem 0 2rem 0;
+    margin-bottom: 2rem;
+    padding: 3.5rem 2.5rem 2rem 2.5rem;
     font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
     color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .footer-logo-box {

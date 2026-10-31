@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/achivements.css';
-import risingStarImg from './assets/rising-star.png';
-import lateNightHeroImg from './assets/late-night-hero.png';
+import award2024Img from './assets/2024.png';
+import award2025Img from './assets/2025.png';
 
 const achievementsData = [
     {
@@ -9,7 +9,7 @@ const achievementsData = [
         title: 'Rising Star of the Year',
         description: 'Honoured with the Rising Star of the Year award.',
         year: '2024',
-        image: risingStarImg,
+        image: award2024Img,
         iconType: 'star'
     },
     {
@@ -17,7 +17,7 @@ const achievementsData = [
         title: 'Late Night Hero of the Year',
         description: 'Recognised with the Late Night Hero of the Year award.',
         year: '2025',
-        image: lateNightHeroImg,
+        image: award2025Img,
         iconType: 'moon'
     }
 ];
